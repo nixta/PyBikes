@@ -15,6 +15,9 @@ __all__ = ['Cyclocity','CyclocityStation']
 scrapper = utils.PyBikesScrapper()
 html_parser = HTMLParser.HTMLParser()
 
+scrapper.setProxies({"http":"127.0.0.1:8118"})
+scrapper.enableProxy()
+
 class Cyclocity(BikeShareSystem):
 
     list_url = '/service/carto'
