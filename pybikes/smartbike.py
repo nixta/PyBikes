@@ -16,7 +16,8 @@ ID_ADD_RGX_V = 'idStation\=\"\+(.*)\+\"\&addressnew\=(.*)\+\"\&s\_id\_idioma'
 
 scrapper = utils.PyBikesScrapper()
 
-scrapper.setProxies({"http":"127.0.0.1:8118"})
+scrapper.setProxies({"http":"127.0.0.1:8118",
+                     "https":"127.0.0.1:8118"})
 scrapper.enableProxy()
 
 
