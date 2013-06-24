@@ -50,6 +50,7 @@ class BCycleSystem(BikeShareSystem):
         geopoints = re.findall(LAT_LNG_RGX, html_data)
         puzzle = re.findall(DATA_RGX, html_data)
 
+        stations = []
         for index, fuzzle in enumerate(puzzle):
             
             station = BCycleStation(index)
@@ -57,8 +58,9 @@ class BCycleSystem(BikeShareSystem):
             station.longitude = float(geopoints[index][1])
             station.from_html(fuzzle)
 
-            self.stations.append(station)
+            stations.append(station)
 
+        self.stations = stations
 
 class BCycleStation(BikeShareStation):
 
